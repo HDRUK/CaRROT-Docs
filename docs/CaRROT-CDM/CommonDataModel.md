@@ -43,10 +43,45 @@ The package contains `.csv` dumps taken from BCLink that give descriptions of wh
 At present are only dumps from version `5.3.1` of the CDM:
 
 ```
-$ ls $(coconnect info data_folder)/cdm/BCLINK_EXPORT/5.3.1
+$ ls $(carrot info data_folder)/cdm/BCLINK_EXPORT/5.3.1
 export-CONDITION_OCCURRENCE.csv export-MEASUREMENT.csv          export-PERSON.csv
 export-DRUG_EXPOSURE.csv        export-OBSERVATION.csv
 ``` 
+
+To generate more tables from BCLink, while SSH'd into a BCLink VM, you can run:
+```
+datasettool2 export-form <TABLE NAME> --database bclink
+```
+e.g:
+```
+$ datasettool2 export-form DEATH --database bclink
+<properties>
+name=death
+family=DEATH
+databaseFormCharset=ISO-8859-15
+dbVersion=3.0
+formFileCharset=ISO-8859-15
+origin=imported_from_file
+originalPath=/usr/lib/bcos/OMOP/death.fi
+version=3.0
+</properties>
+<variables>
+VARIABLE	DESCRIPTION	TYPE	KEY	MINVAL	MAXVAL	CHOICESET	REQUIRED	LENGTH	VALUEFUNCTION	DEFAULT	VALUEFORMATREGEXP	BCDBITRATE
+PERSON_ID	person_id	Integer	1				yes					
+DEATH_DATE	death_date	Date										
+DEATH_DATETIME	death_datetime	Timestamp										
+DEATH_TYPE_CONCEPT_ID	death_type_concept_id	Integer										
+CAUSE_CONCEPT_ID	cause_concept_id	Integer										
+CAUSE_SOURCE_VALUE	cause_source_value	Text						50				
+CAUSE_SOURCE_CONCEPT_ID	cause_source_concept_id	Integer										
+</variables>
+<columnannotations>
+VARIABLE	ONTOLOGY_ID	TERM_ID	RELATIONSHIP_TYPE
+PERSON_ID	BC	subject	is_a
+PERSON_ID	BC_VARCLASS	patient	is_a
+</columnannotations>
+```
+
 
 To help generate a pythonic template for a CDM template, the CLI can be used to do this
 ```
