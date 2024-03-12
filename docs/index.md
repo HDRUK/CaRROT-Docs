@@ -1,17 +1,9 @@
-Welcome to the documentation of the CaRROT project!
+---
+hide:
+  - navigation
+  - toc
+---
 
-!!! carrot "CaRROT"
-    *C*onvenient *a*nd *R*eusable *R*apid *O*MOP *T*ransformer: bringing together health data from across the UK
+## Welcome to the documentation of the CaRROT project!
 
-What we do in a nutshell...
-```python
-researcher.data = coconnect.find('patient_data',
-                                 fields = [
-                                            'birth_date',
-                                            'ethnicity',
-                                            'existing_conditions'
-                                          ],
-                                 anonymous=True)
-```
-
-If you are a Data Partner using our [ETL Tool](https://github.com/HDRUK/CaRROT-CDM), please go straight to the documentation [here](/CaRROT-Docs/CaRROT-CDM/About).
+## Please see the new documentation site at [carrot4omop.ac.uk](https://carrot4omop.ac.uk). This site is no longer maintained.
