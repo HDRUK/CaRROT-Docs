@@ -1,9 +1,11 @@
-site_name: CaRROT Docs
+site_name: Carrot Docs
 theme:
   name: material
   palette:
     scheme: carrot
   custom_dir: overrides
+  static_templates:
+    - 404.html
 extra_css:
   - stylesheets/custom.css
 
