@@ -1,5 +1,7 @@
 site_name: Carrot Docs
+# Comment this out when running locally to get proper resolution of css files.
 site_url: https://hdruk.github.io/CaRROT-Docs/
+
 theme:
   name: material
   palette:
