@@ -1,4 +1,5 @@
 site_name: Carrot Docs
+site_url: https://hdruk.github.io/CaRROT-Docs/
 theme:
   name: material
   palette:
